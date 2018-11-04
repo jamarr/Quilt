@@ -11,13 +11,7 @@ import Navbar from './Navbar';
 
 
 class App extends Component {
-  // constructor() {
-  //   super()
-  // }
-  // handleLogIn = () => { //Make into Single Function On Navbar 
-  // Use Teriniary to determine Login = True or false 
 
-  // }
   render() {
     return (
       <BrowserRouter className="App">
