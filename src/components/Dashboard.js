@@ -1,20 +1,14 @@
 import React from 'react'
 
 
+const Dashboard = (props) => {
+  console.log(props)
+  return (
+    <div>
+      <p> This Is our Dashboard  </p>
+    </div>
 
-
-
-class Dashboard extends React.Component {
-
-
-
-  render() {
-    return (
-      <div>
-        <p> This Is our Dashboard  </p>
-      </div>
-    )
-  }
-}
+  );
+};
 
 export default Dashboard

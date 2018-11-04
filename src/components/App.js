@@ -6,6 +6,10 @@ import Navbar from './Navbar';
 
 
 class App extends Component {
+<<<<<<< HEAD
+=======
+
+>>>>>>>  Added Production
   render() {
     return (
       <div>
