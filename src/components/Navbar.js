@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import netlifyIdentity from 'netlify-identity-widget';
+import Login from '../login';
 
 
 const Navbar = styled.nav`
@@ -44,7 +45,7 @@ const UsersNotConnected = (
         netlifyIdentity.open();
       }}>
       Sign In
-    </a>
+  </a>
   </div>
 );
 
@@ -55,16 +56,32 @@ const UsersConnected = (
   </div>
 );
 
+
+
 export default class NavBar extends React.Component {
   state = {
     isConnected: false
   };
 
+  // connectedHander = () => {
+  //   this.setState((prev) => {
+  //     isConnected: !prev.isConnected
+  //   });
+  // };
+
+  connectedHander = () => {
+    this.setState({
+      isConnected: !this.state.isConnected
+    });
+  };
+
+
+
   render() {
     return (
       <Navbar>
         <h1 children="QUILT" />
-        {this.state.isConnected ? UsersConnected : UsersNotConnected}
+        {<Login onAuthChange={this.connectedHander} />}
       </Navbar>
     );
   }
