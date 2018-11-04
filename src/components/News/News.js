@@ -1,41 +1,46 @@
 import React, { Component } from 'react';
-import NewSingle from './NewSingle';
+import ArtFrame from './ArtFrame';
+
+const URL =
+  'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=774beda1345847508da686c538fe6698';
 
 class News extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      news: [],
-    };
-  }
+  state = {
+    news: [],
+    itemSaved: new Set()
+  };
 
   componentDidMount() {
-    const url = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=774beda1345847508da686c538fe6698';
-
-    fetch(url)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
+    fetch(URL)
+      .then(response => response.json())
+      .then(data => {
         this.setState({
           news: data.articles
-        })
+        });
       })
-      .catch((error) => console.log(error));
+      .catch(error => console.log(error));
   }
+
+  handleSaveItem = item =>
+    this.setState({
+      itemSaved: this.state.itemSaved.add(item)
+    });
 
   renderItems = () => {
     return this.state.news.map((item, index) => (
-      <NewSingle key={index} item={item} />
+      <div className="element-item red1 newsArticle news-box col-md-4 col-sm red1Link">
+        <ArtFrame
+          key={index}
+          item={item}
+          savedItem={item => this.handleSaveItem(item)}
+        />
+      </div>
     ));
-  }
+  };
 
   render() {
-    return (
-      <div className="row">
-        {this.renderItems()}
-      </div>
-    );
+    console.log('itemSaved', this.state.itemSaved);
+    return <div className="row">{this.renderItems()}</div>;
   }
 }
 
