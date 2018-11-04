@@ -1,24 +1,24 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import netlifyIdentity from "netlify-identity-widget";
 netlifyIdentity.init();
 
 function saveLogin() {
-   if (netlifyIdentity && netlifyIdentity.currentUser()) {
-     const {
-       app_metadata, created_at, confirmed_at, email, id, user_metadata
-     } = netlifyIdentity.currentUser();
+  if (netlifyIdentity && netlifyIdentity.currentUser()) {
+    const {
+      app_metadata, created_at, confirmed_at, email, id, user_metadata
+    } = netlifyIdentity.currentUser();
 
-     localStorage.setItem(
-       "faunaNetlifyUser",
-       JSON.stringify({app_metadata, created_at, confirmed_at, email, id, user_metadata})
-     );
-     return {app_metadata, created_at, confirmed_at, email, id, user_metadata};
-   }
+    localStorage.setItem(
+      "faunaNetlifyUser",
+      JSON.stringify({ app_metadata, created_at, confirmed_at, email, id, user_metadata })
+    );
+    return { app_metadata, created_at, confirmed_at, email, id, user_metadata };
+  }
 }
 
 function clearLogin() {
-   localStorage.removeItem("faunaNetlifyUser");
+  localStorage.removeItem("faunaNetlifyUser");
 }
 
 class Login extends Component {
@@ -29,15 +29,15 @@ class Login extends Component {
   componentDidMount() {
     var existingUser = localStorage.getItem("faunaNetlifyUser");
     if (existingUser) {
-      this.setState({user: JSON.parse(existingUser)}, this.didLogin.bind(this, "noSave"));
+      this.setState({ user: JSON.parse(existingUser) }, this.didLogin.bind(this, "noSave"));
     } else {
       existingUser = saveLogin(); // does calling user pop a thing? should we set state?
       if (existingUser) {
-        this.setState({user: existingUser}, this.didLogin.bind(this, "noSave"));
+        this.setState({ user: existingUser }, this.didLogin.bind(this, "noSave"));
       }
     }
-    netlifyIdentity.on("login", (user) => this.setState({user}, this.didLogin.bind(this)));
-    netlifyIdentity.on("logout", (user) => this.setState({user: null}, this.didLogout.bind(this) ));
+    netlifyIdentity.on("login", (user) => this.setState({ user }, this.didLogin.bind(this)));
+    netlifyIdentity.on("logout", (user) => this.setState({ user: null }, this.didLogout.bind(this)));
   }
 
   didLogin(noSave) {
@@ -47,7 +47,7 @@ class Login extends Component {
       this.state.user.app_metadata &&
       this.state.user.app_metadata.faunadb_token
     if (faunadb_token) {
-        this.props.onAuthChange(faunadb_token)
+      this.props.onAuthChange(faunadb_token)
     } else {
       console.error("Expected user to have a faunadb_token, check logs for the identity-signup.js function.")
       console.log(this.state.user)
@@ -59,29 +59,30 @@ class Login extends Component {
     this.props.onAuthChange(null)
   }
 
-  doLogin () {
+  doLogin() {
     netlifyIdentity.open()
   }
 
-  doLogout () {
+  doLogout() {
     // remove credentials and refresh model
     netlifyIdentity.logout();
     clearLogin();
-    this.setState({user:null})
+    this.setState({ user: null })
   }
-	render () {
+  render() {
     var actionForm = <span>
-        <a onClick={this.doLogin.bind(this)}>Login or Sign Up</a>
-      </span>;
-		return (
-			<div className="Login">
+      <a onClick={this.doLogin.bind(this)}>Login or Sign Up</a>
+    </span>;
+    return (
+      <div className="Login">
+        dummytext
         {this.state.user ?
           <a onClick={this.doLogout.bind(this)}>Logout</a> :
           actionForm
         }
       </div>
-		);
-	}
+    );
+  }
 }
 
 export default Login;

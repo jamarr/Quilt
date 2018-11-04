@@ -9,3 +9,8 @@
   FAUNADB_SERVER_SECRET = "fnAC_A8mFtACAlezP4b4i2B4ZKUDlmVy0MDLDMu8"
   FAUNADB_ADMIN_SECRET = "fnAC_A47uKACAY7FLKOxjHcCYC_IgS_Ue8vjWtvu"
   
+
+#A redirect rule with all the supported properties
+[[redirects]]
+  from = "/"
+  to = "/Dashboard"
