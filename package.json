@@ -14,20 +14,12 @@
     "prettier": "^1.14.3",
     "react": "^16.6.0",
     "react-bootstrap": "^0.32.4",
-    "react-dom": "^16.5.2",
+    "react-dom": "^16.6.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5",
-<<<<<<< HEAD
     "router": "^1.3.3",
     "styled-components": "^4.0.3"
-||||||| merged common ancestors
-    "router": "^1.3.3"
-=======
-    "router": "^1.3.3",
-    "styled-components": "^4.0.3",
-    "zip": "^1.2.0"
->>>>>>> 4d8416aa300b14910e9f76911d3514fcecbaf3ff
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,7 +27,7 @@
     "checkForFaunaKey": "node ./scripts/check-for-fauna-key.js",
     "prebuild": "echo 'setup FaunaDB schema' && npm run bootstrap",
     "build": "npm-run-all --parallel build:**",
-    "build:app": "react-scripts build",n
+    "build:app": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
