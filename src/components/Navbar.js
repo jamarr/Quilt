@@ -3,7 +3,6 @@ import { Navbar } from 'react-bootstrap';
 import netlifyIdentity from 'netlify-identity-widget';
 
 export default class NavBar extends React.Component {
-
     render() {
         return (
             <Navbar >

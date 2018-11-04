@@ -1,16 +1,14 @@
 import React from 'react'
 
 
-const Dashboard = (props)  => {
+const Dashboard = (props) => {
+  console.log(props)
+  return (
+    <div>
+      <p> This Is our Dashboard  </p>
+    </div>
 
-    console.log(props)
-  return  (
-        <div>
-        <p> This Is our Dashboard  </p>
-        </div>
-      
-      );
+  );
+};
 
-}
-
-  export default Dashboard
+export default Dashboard
