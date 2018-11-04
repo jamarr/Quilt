@@ -70,12 +70,12 @@ class Login extends Component {
     this.setState({ user: null })
   }
   render() {
-    var actionForm = <span>
+    var actionForm =
       <a onClick={this.doLogin.bind(this)}>Login or Sign Up</a>
-    </span>;
+
     return (
       <div className="Login">
-        dummytext
+
         {this.state.user ?
           <a onClick={this.doLogout.bind(this)}>Logout</a> :
           actionForm
