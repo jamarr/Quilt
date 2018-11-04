@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import News from './News/News';
 import Dashboard from './Dashboard';
 import Navbar from './Navbar';
+import Footer from './footer';
 
 
 
@@ -27,6 +28,7 @@ class App extends Component {
             <Route path="/Dashboard" exact={true} component={Dashboard} />
             <Route path="/" exact component={News} />
           </Switch>
+          <Footer />
         </>
       </BrowserRouter>
     );
