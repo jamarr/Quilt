@@ -47,7 +47,7 @@ const UsersNotConnected = (
         netlifyIdentity.open();
       }}>
       Sign In
-    </a>
+  </a>
   </div>
 );
 
@@ -58,10 +58,26 @@ const UsersConnected = (
   </div>
 );
 
+
+
 export default class NavBar extends React.Component {
   // state = {
   //   isConnected: true
   // };
+
+  // connectedHander = () => {
+  //   this.setState((prev) => {
+  //     isConnected: !prev.isConnected
+  //   });
+  // };
+
+  connectedHander = () => {
+    this.setState({
+      isConnected: !this.state.isConnected
+    });
+  };
+
+
 
   render() {
     return (
