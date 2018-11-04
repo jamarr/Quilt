@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
 import News from './News/News';
-// import Sidenews from './News/Sidenews';
+import Navbar from './Navbar';
 
 
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
+      <Navbar/>
         <News />
-      </div>
+
+        </div>
+    
     );
   }
 }
