@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "faunadb": "^2.5.2",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.3.1",
     "netlify-identity-widget": "^1.4.14",
