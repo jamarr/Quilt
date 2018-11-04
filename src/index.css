@@ -11,6 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+button {
+  background-color: transparent;
+  color: #000;
+  border: solid 0.5px #000;
+  font-weight: bold;
+  font-size: 0.9rem;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+}
 .green {
   background: green;
   color: red;
@@ -259,7 +269,8 @@ img {
 
 }
 .fa {
-  margin: 1%;
+  margin-right: 50%;
+  margin-left: 50%;
 }
 .sourceDisplay{
   border: 1px solid black;

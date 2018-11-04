@@ -26,9 +26,6 @@
     "eject": "react-scripts eject",
     "bootstrap": "node ./scripts/bootstrap-fauna-database.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": [
     ">0.2%",
     "not dead",
