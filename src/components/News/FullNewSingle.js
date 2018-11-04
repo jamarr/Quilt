@@ -5,7 +5,7 @@ const styles = {
 
 class FullNewSingle extends Component {
 
-  const NewSingle = ({item}) => (
+      NewSingle = ({item}) => (
     <div style={styles} className="col s4">
       <div className="card">
         <div className="card-image">
