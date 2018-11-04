@@ -21,11 +21,21 @@
 >>>>>>> removed homepage from pacage.json
   },
   "scripts": {
+<<<<<<< HEAD
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+=======
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "bootstrap": "node ./scripts/bootstrap-fauna-database.js"
+>>>>>>> Add fauna database
   },
   "author": "",
   "license": "ISC",
