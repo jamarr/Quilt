@@ -24,7 +24,15 @@ export default class NavBar extends React.Component {
       <div className="collapse navbar-collapse  mt-3.5 my-lg-0 justify-content-end" style="background:#FEF0EB;"id="navbarSupportedContent">
         <ul className="navbar-nav"></ul>
       </div>
+      <li class="nav-item">
+      <a class="nav-link" href="./index-how.html">How Does It Work?</a>
+      </li>
       </div>
+
+   
+ 
+
+
     )
   }
 }
