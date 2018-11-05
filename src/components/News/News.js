@@ -37,6 +37,7 @@ class News extends Component {
       </div>
     ));
   };
+  
 
   render() {
     return <div className="row">{this.renderItems()}</div>;
