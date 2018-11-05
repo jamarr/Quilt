@@ -1,13 +1,4 @@
 import React, { Component } from 'react'
-import styled from 'styled-components';
-
-const Title = styled.h1`
-font-size: 35px;
-padding: 20px;
-`
-
-
-
 
 
 
@@ -15,37 +6,34 @@ export default class Footer extends Component {
   render() {
     return (
        <div>
-        <footer className="footer">
+        <footer className=" mx-auto page-footer font-small cyan darken-3">
         <div className="container">
-        <Title>STAY CONNECTED</Title>
-        <div className= "row">
-        <ul className="nav flex-column flex-sm-row align-self-center">
-            <li className=" col nav-item"><i className="fa fa-facebook-f fa-2x"></i></li>
-            <li className=" col nav-item"><i className="fa fa-twitter-square fa-2x"></i></li>
-            <li className=" col nav-item"><i className="fa fa-linkedin fa-2x" ></i></li>
-            <li className=" col nav-item"><i className="fa fa-github-square fa-2x"></i></li>
-        </ul>
+        <div className="row">
+        <div className="col-sm py-5">
+        <div className="mb-5 justify-content-center">
+        <a className="fb-ic">
+        <i className="fa fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+        </a>
+        <a className="tw-ic">
+        <i className="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+        </a>
+        <a className="gplus-ic">
+        <i className="fa fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+        </a>
+        <a className="li-ic">
+        <i className="fa fa-linkedin fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+        </a>
+        <a className="ins-ic">
+        <i className="fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+        </a>
         </div>
-        <Title>&copy; 2018 QUILT</Title>
         </div>
-        <div className="row d-flex align-content-between flex-wrap">
-        <form method="POST" action="https://formspree.io/YOUREMAILHERE">
-            <div class="form-group row">
-            <label for="inputEmail3">Email</label>
-            </div>
-            <div className="form-group">
-            <input type="text" name="name"/>
-            </div>
-            <div className="form-group">
-            <input type="email" name="_replyto"/>
-            </div>
-            <div className="form-group">
-            <input type="submit" value="Send"/>
-            </div>
-        </form>
         </div>
-        </footer>
-      </div>
+        </div>
+        <div className="footer-copyright text-center py-3">© 2018 QUILT
+        </div>
+        </footer>  
+        </div>
     )
   }
 }
