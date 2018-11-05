@@ -1,30 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
-import NewsImg from '../../assets/news.jpeg';
-import BtnSaved from '../UI/BtnSaved';
-import Emoji from '../UI/Emoji';
 
 const Card = styled.div`
-  position: relative;
-
+  display: block;
   width: 300px;
-  height: 200px;
-
+  height: 300px;
+  position: relative;
   margin: 5px;
   border-radius: 3px;
-
+  background-color: blue;
   background-image: url(${props => props.img});
   background-position: center;
   background-size: cover;
+  transition: all 300ms;
   :hover {
-    transform: scale(1.03);
-    transition: all ease-in-out 300ms;
+    transform: scale(1.05);
+    transition: all 300ms;
   }
+  transition: all 300ms;
 
   a {
     color: white;
+    color: white;
     font-weight: 600;
     font-size: 1.2rem;
+    :hover {
+      text-decoration: none;
+    }
+  }
+
+  button {
+    position: absolute;
   }
 
   .source {
@@ -35,49 +41,27 @@ const Card = styled.div`
 `;
 
 const P = styled.p`
-  background-color: ${props =>
-    props.color === 'REPLUBLICAN'
-      ? '#ff000080'
-      : props.color === 'DEMOCRATIC'
-        ? '#0000ff80'
-        : '#27b06580'};
+  background-color: ${props => props.color};
+  text-align: left;
   padding: 30px 10px;
-  height: -webkit-fill-available;
+  height: 100%;
   line-height: 2em;
+  text-align: center;
   border-radius: 3px;
-  :hover {
-    background-color: #000000ad;
-    transition: all ease-in-out 300ms;
-  }
-
-  span {
-    background-color: ${props =>
-      props.color === 'REPLUBLICAN'
-        ? 'red'
-        : props.color === 'DEMOCRATIC'
-          ? 'blue'
-          : 'green'};
-  }
 `;
 
 const ArtFrame = props => {
   const { item, savedItem } = props;
-  // If there isn't image
-  if (item.urlToImage === null) item.urlToImage = NewsImg;
   return (
-    <Card img={item.urlToImage}>
+    <Card img={item.urlToImage} color="blue">
       <a href={item.url} target="">
-        <P color={item.party}>
-          <span color={item.party} className="source">
-            {item.source.name}
-          </span>{' '}
-          <br />
+        <P color="#ff009996">
           {item.title} <br />
+          <span className="source">{item.source.name}</span> <br />
+          {item.publishedAt} <br />
         </P>
       </a>
-      <BtnSaved onClick={() => savedItem(item)}>
-        <Emoji children="💾" />
-      </BtnSaved>
+      {/* <button onClick={() => savedItem(item)}>Save Article</button> */}
     </Card>
   );
 };
