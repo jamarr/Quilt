@@ -37,6 +37,7 @@ class News extends Component {
       </div>
     ));
   };
+  
 
   render() {
     console.log('itemSaved', this.state.itemSaved);
