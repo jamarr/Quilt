@@ -29,7 +29,7 @@ export default class Footer extends Component {
         <Title>&copy; 2018 QUILT</Title>
         </div>
         <div className="row d-flex align-content-between flex-wrap">
-        <form method="POST" action="https://formspree.io/YOUREMAILHERE">
+        <form method="POST" action="https://formspree.io/quiltteamform@gmail.com">
             <div class="form-group row">
             <label for="inputEmail3">Email</label>
             </div>
