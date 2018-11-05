@@ -14,7 +14,7 @@
     "prettier": "^1.14.3",
     "react": "^16.6.0",
     "react-bootstrap": "^0.32.4",
-    "react-dom": "^16.5.2",
+    "react-dom": "^16.6.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5",
@@ -29,9 +29,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "bootstrap": "node ./scripts/bootstrap-fauna-database.js"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": [
     ">0.2%",

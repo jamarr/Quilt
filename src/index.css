@@ -259,7 +259,8 @@ img {
 
 }
 .fa {
-  margin: 1%;
+  margin-right: 50%;
+  margin-left: 50%;
 }
 .sourceDisplay{
   border: 1px solid black;
