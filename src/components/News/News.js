@@ -40,7 +40,6 @@ class News extends Component {
   
 
   render() {
-    console.log('itemSaved', this.state.itemSaved);
     return <div className="row">{this.renderItems()}</div>;
   }
 }
