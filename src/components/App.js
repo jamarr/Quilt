@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import News from './News/News';
-import netlifyIdentity from 'netlify-identity-widget'
+import Dashboard from './Dashboard';
+import Navbar from './Navbar';
+import Footer from './footer';
 
-// import Sidenews from './News/Sidenews';
+
+
 
 
 
 class App extends Component {
-  constructor() {
-    super()
 
-    this.handleLogIn = this.handleLogIn.bind(this)
-  }
-
-  handleLogIn () {
-    // You can import the widget into any component and interact with it.
-    netlifyIdentity.open()
-  }
   render() {
     return (
-      <div className="App">
-      
-          <button onClick={this.handleLogIn} >Log in with netlify</button>
-
-        <News />
-      </div>
+      <BrowserRouter className="App">
+        <>
+          <Navbar />
+          <Switch>
+            <Route path="/Dashboard" exact={true} component={Dashboard} />
+            <Route path="/" exact component={News} />
+          </Switch>
+          <Footer />
+        </>
+      </BrowserRouter>
     );
   }
 }
+
 
 export default App;

@@ -2,10 +2,11 @@ body{
   font-size: 16px;
   background-color: #FCF0EB;
   font-family: 'Maven Pro', sans-serif;
+
 }
-nav{
+/* nav{
   border-bottom:1px lightgray solid;
-}
+} */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -15,12 +16,13 @@ code {
   color: red;
 }
 .navbar{
-  position: fixed;
-  width: 100%;
+  position: auto ;
+  width: 200%;
+  height:100px;
   z-index: 3;
-  background-color: #fef0ea;
+  background-color:yellow;
 }
-.navbar-brand{
+/* .navbar-brand{
   border: 1px solid #495057;
   padding: 0 .6rem;
   width:5.5%;
@@ -31,7 +33,7 @@ code {
   margin-right:1rem;
   opacity: .7;
   visibility:hidden;
-}
+} */
 #logo-text{
   position: absolute;
   color:#495057;
@@ -70,9 +72,7 @@ code {
   text-decoration:underline;
 }
 /* NAV - ACCOUNT */
-.dropdown-menu{
-  min-width: 15rem;
-}
+
 #form-item{
   margin:4% auto 6%;
   padding:0;
@@ -95,11 +95,9 @@ code {
     margin: .5rem;
     text-align: center;
 }
-.header {
-  padding-top: 10%;
-}
+
 /* HEADER */
-.header.row{
+/* .header.row{
  margin:0;
 }
 .desk-logo{
@@ -118,13 +116,8 @@ code {
   display:none;
 }
 /* CHECKBOXES */
-input[type="checkbox"] {
-    display:none;
-}
 
-input[type="checkbox"] + label {
-/*     color:#101493; */
-}
+
 
 input[type="checkbox"] + label span {
     display:inline-block;
@@ -479,7 +472,7 @@ img {
     border-top: 1px lightgray solid;
   }
   /* MOBILE */
-  @media only screen and (min-width:360px) and (max-width:420px) {
+  /* @media only screen and (min-width:360px) and (max-width:420px) {
     body{
       font-size: 16px;
       background-color: #FCF0EB;
@@ -517,7 +510,7 @@ img {
     .header{
       padding-top: 15%;
       margin-bottom: 0;
-    }
+    } */
     #login{
       font-size:1.3rem;
       font-weight:50;
@@ -701,4 +694,4 @@ img {
       color: #34353F;
       font-size:.8rem;
     }
-  }
+ 
