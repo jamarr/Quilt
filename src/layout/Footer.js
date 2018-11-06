@@ -3,62 +3,66 @@ import styled from 'styled-components';
 
 const Title = styled.h1`
   font-size: 35px;
-  margin: 2rem 4rem;
-`;
-
-const FooterStyle = styled.footer`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 5rem;  
-`;
-
-const IconWrapper = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-left: 5rem;
-`;
-
-const Copyright = styled.p`
-  font-size: 28px;
-  margin-top: 6.5rem;
-`;
-
-const Form = styled.div`
-  display: flex;
-  margin-top: 5rem;
-  margin-right: 6rem;
+  padding: 20px;
 `;
 
 export default class Footer extends Component {
   render() {
     return (
       <div>
-        <FooterStyle>
+        <footer className="footer">
+<<<<<<< HEAD
+        <div className="container">
+        <Title>STAY CONNECTED</Title>
+        <div className= "row">
+        <ul className="nav flex-column flex-sm-row align-self-center">
+            <li className=" col nav-item"><i className="fa fa-facebook-f fa-2x"></i></li>
+            <li className=" col nav-item"><i className="fa fa-twitter-square fa-2x"></i></li>
+            <li className=" col nav-item"><i className="fa fa-linkedin fa-2x" ></i></li>
+            <li className=" col nav-item"><i className="fa fa-github-square fa-2x"></i></li>
+        </ul>
+        </div>
+        <Title>&copy; 2018 QUILT</Title>
+        </div>
+        <div className="row d-flex align-content-between flex-wrap">
+        <form method="POST" action="https://formspree.io/quiltteamform@gmail.com">
+            <div class="form-group row">
+            <label for="inputEmail3">Email</label>
+            </div>
+            <div className="form-group">
+            <input type="text" name="name"/>
+            </div>
+            <div className="form-group">
+            <input type="email" name="_replyto"/>
+            </div>
+            <div className="form-group">
+            <input type="submit" value="Send"/>
+=======
           <div className="container">
             <Title>STAY CONNECTED</Title>
-            <IconWrapper>
-              <li>
-                <i className="fa fa-facebook-f fa-2x" />
-              </li>
-              <li>
-                 <i className="fa fa-twitter-square fa-2x" />
-              </li>
-              <li>
-                <i className="fa fa-linkedin fa-2x" />
-              </li>
-              <li>
-                <i className="fa fa-github-square fa-2x" />
-              </li>
-              </IconWrapper>
+            <div className="row">
+              <ul className="nav flex-column flex-sm-row align-self-center">
+                <li className=" col nav-item">
+                  <i className="fa fa-facebook-f fa-2x" />
+                </li>
+                <li className=" col nav-item">
+                  <i className="fa fa-twitter-square fa-2x" />
+                </li>
+                <li className=" col nav-item">
+                  <i className="fa fa-linkedin fa-2x" />
+                </li>
+                <li className=" col nav-item">
+                  <i className="fa fa-github-square fa-2x" />
+                </li>
+              </ul>
+>>>>>>> 55cfbd669ff4d0af77a48d55a5226634d250d5f6
             </div>
-            <Copyright>&copy; 2018 QUILT</Copyright>
-
-          <Form>
-            <form method="POST" action="https://formspree.io/jamarredwards@gmail.com" netlify>
+            <Title>&copy; 2018 QUILT</Title>
+          </div>
+          <div className="row d-flex align-content-between flex-wrap">
+            <form method="POST" action="https://formspree.io/YOUREMAILHERE">
               <div className="form-group row">
-                <label for="inputEmail">Email</label>
+                <label for="inputEmail3">Email</label>
               </div>
               <div className="form-group">
                 <input type="text" name="name" />
@@ -70,8 +74,8 @@ export default class Footer extends Component {
                 <input type="submit" value="Send" />
               </div>
             </form>
-          </Form>
-        </FooterStyle>
+          </div>
+        </footer>
       </div>
     );
   }

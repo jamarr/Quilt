@@ -1,43 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 import NewsImg from '../../assets/news.jpeg';
+import BtnSaved from '../UI/BtnSaved';
+import Emoji from '../UI/Emoji';
 
 const Card = styled.div`
-  display: block;
-  width: 300px;
-  height: 300px;
   position: relative;
+
+  width: 300px;
+  height: 200px;
+
   margin: 5px;
   border-radius: 3px;
+
   background-image: url(${props => props.img});
   background-position: center;
   background-size: cover;
-  transition: all 300ms;
   :hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     transition: all ease-in-out 300ms;
   }
-  transition: all ease-in-out 300ms;
 
   a {
     color: white;
-    color: white;
     font-weight: 600;
     font-size: 1.2rem;
-    :hover {
-      text-decoration: none;
-    }
-  }
-
-  button {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    font-size: 1.5em;
-    background-color: #c8498b;
-    padding-left: 12px;
-    border: 1px solid #c8498b;
-    border-radius: 3px 0px 0px 0px;
   }
 
   .source {
@@ -54,12 +41,10 @@ const P = styled.p`
       : props.color === 'DEMOCRATIC'
         ? '#0000ff80'
         : '#27b06580'};
-  text-align: left;
   padding: 30px 10px;
-  height: 100%;
+  height: -webkit-fill-available;
   line-height: 2em;
   border-radius: 3px;
-  transition: all ease-in-out 300ms;
   :hover {
     background-color: #000000ad;
     transition: all ease-in-out 300ms;
@@ -90,7 +75,9 @@ const ArtFrame = props => {
           {item.title} <br />
         </P>
       </a>
-      <button onClick={() => savedItem(item)}>💾</button>
+      <BtnSaved onClick={() => savedItem(item)}>
+        <Emoji children="💾" />
+      </BtnSaved>
     </Card>
   );
 };
