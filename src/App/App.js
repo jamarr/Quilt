@@ -1,18 +1,22 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
-import GlobalStyle from '../styles/globalStyle';
-import theme from '../styles/theme';
-import Layout from '../layout/Layout';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import News from '../components/News/News';
+import Dashboard from '../components/Dashboard';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import Error from '../components/Error';
 
 const App = () => (
   <BrowserRouter>
-    <ThemeProvider theme={theme}>
-      <>
-        <Layout />
-        <GlobalStyle />
-      </>
-    </ThemeProvider>
+    <>
+      <Navbar />
+      <Switch>
+        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/" component={News} exact />
+        <Route component={Error} />
+      </Switch>
+      <Footer />
+    </>
   </BrowserRouter>
 );
 
