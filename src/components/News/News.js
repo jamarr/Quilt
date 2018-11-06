@@ -60,6 +60,7 @@ class News extends Component {
       // Check if source.name is on DEMOCRATIC array
       if (DEMOCRATIC.find(name => name === news.source.name))
         news.party = 'DEMOCRATIC';
+      return news;
     });
     return data;
   }

@@ -11,6 +11,6 @@
   
 
 #A redirect rule with all the supported properties
-[[redirects]]
-  from = "/"
-  to = "/Dashboard"
+#[[redirects]]
+#  from = "/"
+# to = "/dashboard"
