@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import NewsImg from '../../img/news.jpeg';
+import NewsImg from '../../assets/news.jpeg';
 
 const Card = styled.div`
   display: block;
