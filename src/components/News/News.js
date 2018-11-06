@@ -69,7 +69,6 @@ class News extends Component {
       itemSaved: this.state.itemSaved.add(item)
     });
 
-<<<<<<< HEAD
   renderItems = () => {
     return this.state.news.map((item, index) => (
       <div className="element-item red1 newsArticle news-box col-md-4 col-sm red1Link">
@@ -83,8 +82,6 @@ class News extends Component {
   };
   
 
-=======
->>>>>>> 55cfbd669ff4d0af77a48d55a5226634d250d5f6
   render() {
     return (
       <Wrapper>

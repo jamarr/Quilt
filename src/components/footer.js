@@ -11,33 +11,6 @@ export default class Footer extends Component {
     return (
       <div>
         <footer className="footer">
-<<<<<<< HEAD
-        <div className="container">
-        <Title>STAY CONNECTED</Title>
-        <div className= "row">
-        <ul className="nav flex-column flex-sm-row align-self-center">
-            <li className=" col nav-item"><i className="fa fa-facebook-f fa-2x"></i></li>
-            <li className=" col nav-item"><i className="fa fa-twitter-square fa-2x"></i></li>
-            <li className=" col nav-item"><i className="fa fa-linkedin fa-2x" ></i></li>
-            <li className=" col nav-item"><i className="fa fa-github-square fa-2x"></i></li>
-        </ul>
-        </div>
-        <Title>&copy; 2018 QUILT</Title>
-        </div>
-        <div className="row d-flex align-content-between flex-wrap">
-        <form method="POST" action="https://formspree.io/quiltteamform@gmail.com">
-            <div class="form-group row">
-            <label for="inputEmail3">Email</label>
-            </div>
-            <div className="form-group">
-            <input type="text" name="name"/>
-            </div>
-            <div className="form-group">
-            <input type="email" name="_replyto"/>
-            </div>
-            <div className="form-group">
-            <input type="submit" value="Send"/>
-=======
           <div className="container">
             <Title>STAY CONNECTED</Title>
             <div className="row">
@@ -55,12 +28,11 @@ export default class Footer extends Component {
                   <i className="fa fa-github-square fa-2x" />
                 </li>
               </ul>
->>>>>>> 55cfbd669ff4d0af77a48d55a5226634d250d5f6
             </div>
             <Title>&copy; 2018 QUILT</Title>
           </div>
           <div className="row d-flex align-content-between flex-wrap">
-            <form method="POST" action="https://formspree.io/YOUREMAILHERE">
+            <form method="POST" action="https://formspree.io/jamarredwards@gmail.com" netlify>
               <div className="form-group row">
                 <label for="inputEmail3">Email</label>
               </div>
