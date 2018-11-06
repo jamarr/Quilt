@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+<<<<<<< HEAD
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import News from './News/News';
+=======
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Dashboard from './Dashboard';
+>>>>>>> 55cfbd669ff4d0af77a48d55a5226634d250d5f6
 import Navbar from './Navbar';
 import Footer from './footer';
 
