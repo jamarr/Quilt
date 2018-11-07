@@ -6,11 +6,17 @@ const Title = styled.h1`
   padding: 20px;
 `;
 
+const footerStyle = {
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "space-between"
+}
+
 export default class Footer extends Component {
   render() {
     return (
       <div>
-        <footer className="footer">
+        <footer className="footer" style={{ footerStyle }}>
           <div className="container">
             <Title>STAY CONNECTED</Title>
             <div className="row">
