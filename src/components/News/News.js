@@ -70,6 +70,19 @@ class News extends Component {
       itemSaved: this.state.itemSaved.add(item)
     });
 
+  renderItems = () => {
+    return this.state.news.map((item, index) => (
+      <div className="element-item red1 newsArticle news-box col-md-4 col-sm red1Link">
+        <ArtFrame
+          key={index}
+          item={item}
+          savedItem={item => this.handleSaveItem(item)}
+        />
+      </div>
+    ));
+  };
+  
+
   render() {
     return (
       <Wrapper>
