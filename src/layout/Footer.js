@@ -3,41 +3,59 @@ import styled from 'styled-components';
 
 const Title = styled.h1`
   font-size: 35px;
-  padding: 20px;
+  margin: 2rem 4rem;
 `;
 
-const footerStyle = {
-  display: "flex",
-  flexWrap: "wrap",
-  justifyContent: "space-between"
-}
+const FooterStyle = styled.footer`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 5rem;  
+`;
+
+const IconWrapper = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 5rem;
+`;
+
+const Copyright = styled.p`
+  font-size: 28px;
+  margin-top: 6.5rem;
+`;
+
+const Form = styled.div`
+  display: flex;
+  margin-top: 5rem;
+  margin-right: 6rem;
+`;
 
 export default class Footer extends Component {
   render() {
     return (
       <div>
-        <footer className="footer" style={{ footerStyle }}>
+        <FooterStyle>
           <div className="container">
             <Title>STAY CONNECTED</Title>
-            <div className="row">
-              <ul className="nav flex-column flex-sm-row align-self-center">
-                <li className=" col nav-item">
-                  <i className="fa fa-facebook-f fa-2x" />
-                </li>
-                <li className=" col nav-item">
-                  <i className="fa fa-twitter-square fa-2x" />
-                </li>
-                <li className=" col nav-item">
-                  <i className="fa fa-linkedin fa-2x" />
-                </li>
-                <li className=" col nav-item">
-                  <i className="fa fa-github-square fa-2x" />
-                </li>
-              </ul>
+            <IconWrapper>
+              <li>
+                <i className="fa fa-facebook-f fa-2x" />
+              </li>
+              <li>
+                 <i className="fa fa-twitter-square fa-2x" />
+              </li>
+              <li>
+                <i className="fa fa-linkedin fa-2x" />
+              </li>
+              <li>
+                <i className="fa fa-github-square fa-2x" />
+              </li>
+              </IconWrapper>
             </div>
-            <Title>&copy; 2018 QUILT</Title>
-          </div>
-          <div className="row d-flex align-content-between flex-wrap">
+            <Copyright>&copy; 2018 QUILT</Copyright>
+
+          <Form>
             <form method="POST" action="https://formspree.io/jamarredwards@gmail.com" netlify>
               <div className="form-group row">
                 <label for="inputEmail">Email</label>
@@ -52,8 +70,8 @@ export default class Footer extends Component {
                 <input type="submit" value="Send" />
               </div>
             </form>
-          </div>
-        </footer>
+          </Form>
+        </FooterStyle>
       </div>
     );
   }
