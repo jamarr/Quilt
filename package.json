@@ -19,13 +19,18 @@
     "styled-components": "^4.0.3"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "bootstrap": "node ./scripts/bootstrap-fauna-database.js"
+    "👇 ABOUT-bootstrap-command": "💡 scaffold and setup FaunaDB #",
+    "bootstrap": "node ./scripts/bootstrap-fauna-database.js",
+    "👇 ABOUT-start-command": "💡 start the app and server #",
+    "start": "npm-run-all --parallel start:app start:server",
+    "start:app": "react-scripts start",
+    "start:server": "netlify-lambda serve functions -c ./webpack.config.js",
+    "👇 ABOUT-prebuild-command": "💡 before 'build' runs, run the 'bootstrap' command #",
+    "prebuild": "echo 'setup faunaDB' && npm run bootstrap",
+    "👇 ABOUT-build-command": "💡 build the react app and the serverless functions #",
+    "build": "npm-run-all --parallel build:**",
+    "build:app": "react-scripts build",
+    "build:functions": "netlify-lambda build functions -c ./webpack.config.js"
   },
   "browserslist": [
     ">0.2%",
@@ -36,5 +41,14 @@
   "devDependencies": {
     "netlify-lambda": "^0.4.0",
     "npm-run-all": "^4.1.3"
+  },
+  "proxy": {
+    "/.netlify/functions": {
+      "target": "http://localhost:9000",
+      "pathRewrite": {
+        "^/\\.netlify/functions": ""
+      }
+    }
   }
 }
+
