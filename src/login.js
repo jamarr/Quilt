@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 
 import netlifyIdentity from 'netlify-identity-widget';
@@ -83,7 +84,7 @@ class Login extends Component {
 
   didLogout() {
     clearLogin();
-    Change(null);
+    this.props.onAuthChange(null);
   }
 
   doLogin() {
