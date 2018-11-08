@@ -83,7 +83,7 @@ class Login extends Component {
 
   didLogout() {
     clearLogin();
-    this.props.onAuthChange(null);
+    Change(null);
   }
 
   doLogin() {
