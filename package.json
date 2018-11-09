@@ -8,7 +8,6 @@
     "generate-password": "^1.4.1",
     "isotope-layout": "^3.0.6",
     "netlify-identity-widget": "^1.4.14",
-    "netlify-lambda": "^1.0.2",
     "prettier": "^1.14.3",
     "react": "^16.6.0",
     "react-bootstrap": "^0.32.4",
@@ -17,19 +16,20 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5",
     "router": "^1.3.3",
+    "simple-oauth2": "^2.2.1",
     "styled-components": "^4.0.3",
     "webpack": "^4.25.1"
   },
   "scripts": {
-    "👇 ABOUT-bootstrap-command": "💡 scaffold and setup FaunaDB #",
+    "ABOUT-bootstrap-command": "scaffold and setup FaunaDB #",
     "bootstrap": "node ./scripts/bootstrap-fauna-database.js",
-    "👇 ABOUT-start-command": "💡 start the app and server #",
+    " ABOUT-start-command": " start the app and server #",
     "start": "npm-run-all --parallel start:app start:server",
     "start:app": "react-scripts start",
     "start:server": "netlify-lambda serve functions -c ./webpack.config.js",
-    "👇 ABOUT-prebuild-command": "💡 before 'build' runs, run the 'bootstrap' command #",
+    "ABOUT-prebuild-command": "before 'build' runs, run the 'bootstrap' command #",
     "prebuild": "echo 'setup faunaDB' && npm run bootstrap",
-    "👇 ABOUT-build-command": "💡 build the react app and the serverless functions #",
+    "ABOUT-build-command": "build the react app and the serverless functions #",
     "build": "npm-run-all --parallel build:**",
     "build:app": "react-scripts build",
     "build:functions": "netlify-lambda build functions -c ./webpack.config.js"
@@ -41,7 +41,15 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "netlify-lambda": "^0.4.0",
+    "netlify-lambda": "^1.0.3",
     "npm-run-all": "^4.1.3"
+  },
+  "proxy": {
+    "/.netlify/functions": {
+      "target": "http://localhost:9000",
+      "pathRewrite": {
+        "^/\\.netlify/functions": ""
+      }
+    }
   }
 }
