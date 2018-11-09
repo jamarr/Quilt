@@ -44,7 +44,7 @@ const NavBar = () => (
   
   <Navbar>
     <h1 children="QUILT" />
-    <Login model={this.props.model} onError={this.onError.bind(this)} onAuthChange={this.onAuthChange.bind(this)} />
+
   </Navbar>
 );
 

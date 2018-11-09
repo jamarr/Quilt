@@ -50,11 +50,25 @@ function setupFaunaDB(key) {
   })
 
   /* Based on your requirements, change the schema here */
-
-  return client.query(
+ return client.query(
       q.CreateClass({
         name: "users"
       }))
+    .then(() => client.query(
+      q.Do(
+        q.CreateClass({
+          name: "todos",
+          permissions: {
+            create: q.Class("users")
+          }
+        }),
+        q.CreateClass({
+          name: "lists",
+          permissions: {
+            create: q.Class("users")
+          }
+        })
+      )))
     .then(() => client.query(
       q.Do(
         q.CreateIndex({
@@ -69,8 +83,31 @@ function setupFaunaDB(key) {
           // this index is optional but useful in development for browsing users
           name: `all_users`,
           source: q.Class("users")
-          
         }),
+        q.CreateIndex({
+          name: "all_todos",
+          source: q.Class("todos"),
+          permissions: {
+            read: q.Class("users")
+          }
+        }),
+        q.CreateIndex({
+          name: "all_lists",
+          source: q.Class("lists"),
+          permissions: {
+            read: q.Class("users")
+          }
+        }),
+        q.CreateIndex({
+          name: 'todos_by_list',
+          source: q.Class("todos"),
+          terms: [{
+            field: ['data', 'list']
+          }],
+          permissions: {
+            read: q.Class("users")
+          }
+        })
       )
     ))
     .then(console.log.bind(console))
