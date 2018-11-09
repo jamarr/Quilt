@@ -69,18 +69,8 @@ function setupFaunaDB(key) {
           // this index is optional but useful in development for browsing users
           name: `all_users`,
           source: q.Class("users")
+          
         }),
-        
-        q.CreateIndex({
-          name: 'todos_by_list',
-          source: q.Class("todos"),
-          terms: [{
-            field: ['data', 'list']
-          }],
-          permissions: {
-            read: q.Class("users")
-          }
-        })
       )
     ))
     .then(console.log.bind(console))

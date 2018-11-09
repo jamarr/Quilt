@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Login from '../login';
+import Login from '../Login';
 
 const Navbar = styled.nav`
   display: flex;
@@ -40,9 +40,11 @@ const Navbar = styled.nav`
 `;
 
 const NavBar = () => (
+
+  
   <Navbar>
     <h1 children="QUILT" />
-    <Login />
+    <Login model={this.props.model} onError={this.onError.bind(this)} onAuthChange={this.onAuthChange.bind(this)} />
   </Navbar>
 );
 
