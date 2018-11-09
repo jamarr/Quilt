@@ -73,6 +73,8 @@ class Login extends Component {
 	render () {
     var actionForm = <span>
         <a onClick={this.doLogin.bind(this)}>Login or Sign Up</a>
+        {this.state.faunadb_token ? listNavigator : ''}
+          {this.state.faunadb_token ? inputArea : ''}
       </span>;
 		return (
 			<div className="Login">
