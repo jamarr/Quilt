@@ -10,14 +10,13 @@ const FooterStyle = styled.footer`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 5rem;  
-`;
-
-const IconWrapper = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-left: 5rem;
+  margin-bottom: 5rem; 
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 5rem; 
+  }
 `;
 
 const Copyright = styled.p`
@@ -38,7 +37,7 @@ export default class Footer extends Component {
         <FooterStyle>
           <div className="container">
             <Title>STAY CONNECTED</Title>
-            <IconWrapper>
+            <ul>
               <li>
                 <i className="fa fa-facebook-f fa-2x" />
               </li>
@@ -51,7 +50,7 @@ export default class Footer extends Component {
               <li>
                 <i className="fa fa-github-square fa-2x" />
               </li>
-              </IconWrapper>
+              </ul>
             </div>
             <Copyright>&copy; 2018 QUILT</Copyright>
 
