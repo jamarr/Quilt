@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Title = styled.h1`
   font-size: 35px;
-  margin: 2rem 5rem;
+  margin: 2rem 6.5rem;
 `;
 
 const FooterStyle = styled.footer`
@@ -15,7 +15,7 @@ const FooterStyle = styled.footer`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-left: 6rem; 
+    margin-left: 7rem; 
   }
 `;
 
