@@ -27,17 +27,17 @@ const Ul = styled.ul`
 export default () => (
   <Ul>
     <li>
-      <a href="#">
+      <a href="https://quilt.netlify.com/">
         <i className="fa fa-facebook-f fa-2x" />
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="https://quilt.netlify.com/">
         <i className="fa fa-twitter fa-2x" />
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="https://quilt.netlify.com/">
         <i className="fa fa-linkedin fa-2x" />
       </a>
     </li>
