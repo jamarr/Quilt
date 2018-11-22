@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import NewsImg from '../../assets/news.jpeg';
+import Cover from '../UI/Cover';
 import BtnSaved from '../UI/BtnSaved';
 import Emoji from '../UI/Emoji';
 
 const Card = styled.div`
+  display: grid;
   position: relative;
 
   width: 300px;
@@ -16,66 +19,45 @@ const Card = styled.div`
   background-image: url(${props => props.img});
   background-position: center;
   background-size: cover;
-  :hover {
-    transform: scale(1.03);
-    transition: all ease-in-out 300ms;
-  }
 
   a {
-    color: white;
-    font-weight: 600;
-    font-size: 1.2rem;
+    display: grid;
+    color: ${props => props.theme.colors.text};
+  }
+
+  .title {
+    margin: 15px;
+    padding: 0.5em;
+    font-size: 1.3em;
+    font-weight: 900;
+    background: #00000080;
+    border-radius: 3px;
+    z-index: 2;
   }
 
   .source {
-    padding: 5px;
-    border: 1px solid white;
-    border-radius: 3px;
-  }
-`;
-
-const P = styled.p`
-  background-color: ${props =>
-    props.color === 'REPLUBLICAN'
-      ? '#ff000080'
-      : props.color === 'DEMOCRATIC'
-        ? '#0000ff80'
-        : '#27b06580'};
-  padding: 30px 10px;
-  height: -webkit-fill-available;
-  line-height: 2em;
-  border-radius: 3px;
-  :hover {
-    background-color: #000000ad;
-    transition: all ease-in-out 300ms;
-  }
-
-  span {
-    background-color: ${props =>
-      props.color === 'REPLUBLICAN'
-        ? 'red'
-        : props.color === 'DEMOCRATIC'
-          ? 'blue'
-          : 'green'};
+    align-self: end;
+    border-radius: 0 0 0 3px;
+    background: black;
+    padding: 0.5em;
+    width: max-content;
+    z-index: 2;
   }
 `;
 
 const ArtFrame = props => {
-  const { item, savedItem } = props;
+  const { connected, item, savedItem } = props;
   // If there isn't image
   if (item.urlToImage === null) item.urlToImage = NewsImg;
+
   return (
     <Card img={item.urlToImage}>
       <a href={item.url} target="">
-        <P color={item.party}>
-          <span color={item.party} className="source">
-            {item.source.name}
-          </span>{' '}
-          <br />
-          {item.title} <br />
-        </P>
+        <Cover color={item.party} />
+        <p className="title">{item.title}</p>
+        <p className="source">{item.source.name}</p>
       </a>
-      <BtnSaved onClick={() => savedItem(item)}>
+      <BtnSaved onClick={() => savedItem(item)} connected={connected}>
         <Emoji children="💾" />
       </BtnSaved>
     </Card>
