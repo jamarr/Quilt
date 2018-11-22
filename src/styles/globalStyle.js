@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import theme from './theme';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -53,12 +54,8 @@ const GlobalStyle = createGlobalStyle`
 
   /* Global Style */
 
-  *{
-    transition: all ease-in-out 300ms;
-  }
-
   body{
-    background-color: ${props => props.theme.colors.primary}
+    background-color: ${theme.colors.primary};
     transition: all ease-in-out 300ms;
   }
   
