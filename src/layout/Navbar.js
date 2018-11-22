@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import BtnLogin from '../components/UI/BtnLogin';
+import Button from '../components/UI/Button';
 import Login from '../login';
 
 const Navbar = styled.nav`
@@ -22,9 +22,9 @@ const Navbar = styled.nav`
 const NavBar = () => (
   <Navbar>
     <h1 children="QUILT" />
-    <BtnLogin>
+    <Button>
       <Login />
-    </BtnLogin>
+    </Button>
   </Navbar>
 );
 
