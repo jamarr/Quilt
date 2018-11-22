@@ -35,7 +35,8 @@ const Wrapper = styled.div`
 class News extends Component {
   state = {
     news: [],
-    itemSaved: new Set()
+    itemSaved: new Set(),
+    isConnected: false
   };
 
   componentDidMount() {
@@ -81,7 +82,6 @@ class News extends Component {
       </div>
     ));
   };
-  
 
   render() {
     return (
@@ -91,6 +91,7 @@ class News extends Component {
             key={index}
             item={item}
             savedItem={item => this.handleSaveItem(item)}
+            connected={this.state.isConnected}
           />
         ))}
       </Wrapper>
