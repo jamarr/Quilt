@@ -10,9 +10,9 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <div>
-        <p> This Is our Dashboard  </p>
-      </div>
+
+      <h2> This Is our Dashboard  </h2>
+
     )
   }
 }
