@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 
 import DashButton from "../components/Dashboard/DashButton";
 
@@ -27,15 +26,10 @@ const Nav = styled.nav`
 
 class NavBar extends React.Component {
   render() {
-    let { auth } = this.props;
-    auth = {
-      credits: 10
-    };
     return (
       <Nav>
         <h1 children='QUILT' />
-        <Link to={auth ? "/" : "/"} className='left brand-logo' />
-        <DashButton auth={auth} />
+        <DashButton auth={this.props.auth} />
       </Nav>
     );
   }
