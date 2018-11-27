@@ -17,24 +17,26 @@ const Ul = styled.ul`
     color: ${props => props.theme.colors.secondary};
     font-weight: 600;
   }
-
-  a {
-    color: inherit;
-  }
 `;
 
-const DashButton = props => (
-  <Ul>
-    <li>
-      <Payments />
-    </li>
-    <li>
-      <Button children={props.auth ? LOGOUT : LOGIN} />
-    </li>
-    <li>
-      <span>Credits: {props.auth.credits}</span>
-    </li>
-  </Ul>
-);
+const DashButton = props => {
+  const { auth } = props;
+
+  if (!auth) return <Button children={LOGIN} />;
+
+  return (
+    <Ul>
+      <li>
+        <Payments />
+      </li>
+      <li>
+        <Button children={LOGOUT} />
+      </li>
+      <li>
+        <span>Credits: {auth.credits}</span>
+      </li>
+    </Ul>
+  );
+};
 
 export default DashButton;
