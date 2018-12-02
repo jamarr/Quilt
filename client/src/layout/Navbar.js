@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 
 import DashButton from "../components/Dashboard/DashButton";
+import  FaceButton from "../components/Dashboard/FaceButton";
 
 const Nav = styled.nav`
   display: grid;
@@ -30,6 +31,7 @@ class NavBar extends React.Component {
       <Nav>
         <h1 children='QUILT' />
         <DashButton auth={this.props.auth} />
+        <FaceButton  auth= {this.props.FaceButton}/>
       </Nav>
     );
   }
