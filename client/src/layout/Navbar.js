@@ -31,7 +31,7 @@ class NavBar extends React.Component {
       <Nav>
         <h1 children='QUILT' />
         <DashButton auth={this.props.auth} />
-        <FaceButton  auth= {this.props.FaceButton}/>
+        <FaceButton  auth= {this.props.auth}/>
       </Nav>
     );
   }

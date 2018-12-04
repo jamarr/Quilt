@@ -3,10 +3,12 @@ import styled from "styled-components";
 import Payments from "../../layout/Payments";
 import Button from "../UI/Button";
 import Facebook from "../Facebook";
+import responseFacebook from "../Facebook";
+import FacebookLogin from "../Facebook";
 
 
-const LOGIN = <a href='{Facebook}' >Login</a>;
-const LOGOUT = <a href=' {responseFacebook}'>Logout</a>;
+const LOGIN = <a href='./src/facebook.js' >Login</a>;
+const LOGOUT = <a href='./src/facebook.js'>Logout</a>;
 
 const Ul = styled.ul`
   display: flex;
@@ -22,9 +24,9 @@ const Ul = styled.ul`
 `;
 
 const FaceButton = props => {
-  const { auth } = props;
+  const { face } = props;
 
-  if (!auth) return <Button children={LOGIN} />;
+  if (!face) return <Button children={LOGIN} />;
 
   return (
     <FacebookLogin
