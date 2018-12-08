@@ -1,10 +1,12 @@
 module.exports = {
   googleClientID:
-    '875253937718-q166bnips1b1j3t3bskioas3loq69247.apps.googleusercontent.com',
-  googleClientSecret: 'googleClientSecret',
+    '751148381989-35j8fqrkeea5vnglv4mhup6c409b6ujc.apps.googleusercontent.com',
+  googleClientSecret: '46xIymjrKCDE-YAXBeoHuUhz',
   mongoURI:
-    'mongodb://joshuaaguilar20:J0shua11@ds113122.mlab.com:13122/email-dev',
+    'mongodb://jamarr:Harrdcorre!23@ds227674.mlab.com:27674/quilt',
   cookieKey: 'ireallylovecookiesandebbyandsnugs',
   stripePublicKey: 'pk_test_nNrAdQIeNUfjQpHKtYzalw8A',
-  stripeSecretKey: 'sk_test_Ss9ahj3Yv9WPq1uQ8yt9oIcU'
+  stripeSecretKey: 'sk_test_Ss9ahj3Yv9WPq1uQ8yt9oIcU',
+  FACEBOOK_APP_ID:'2401284699888073',
+FACEBOOK_APP_SECRET: 'b3c08c939a3ba1c758c7a4f7fa543419'
 };

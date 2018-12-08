@@ -32,7 +32,7 @@ class NavBar extends React.Component {
       <Nav>
         <h1 children='QUILT' />
         <DashButton auth={this.props.auth} />
-        <FaceBook />
+        <FaceBook auth={this.props.auth} />
       </Nav>
     );
   }

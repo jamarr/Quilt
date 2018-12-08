@@ -1,7 +1,10 @@
-import React, { Component } from "react";
-import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
+import React from "react";
 import styled from "styled-components";
+import Payments from "../../layout/Payments";
+import Button from "../UI/Button";
 
+const LOGIN = <a href='/auth/facebook'>Login</a>;
+const LOGOUT = <a href='/api/logout'>Logout</a>;
 
 const Ul = styled.ul`
   display: flex;
@@ -16,62 +19,24 @@ const Ul = styled.ul`
   }
 `;
 
-export default class Facebook extends Component {
-  state = {
-    isLoggedIn: false,
-    userID: "",
-    name: "",
-    email: "",
-    picture: ""
-  };
+const FaceBook = props => {
+  const { auth } = props;
 
-  responseFacebook = response => {
-    // console.log(response);
+  if (!auth) return <Button children={LOGIN} />;
 
-    this.setState({
-      isLoggedIn: true,
-      userID: response.userID,
-      name: response.name,
-      email: response.email,
-      picture: response.picture.data.url
-    });
-  };
+  return (
+    <Ul>
+      <li>
+        <Payments />
+      </li>
+      <li>
+        <Button children={LOGOUT} />
+      </li>
+      <li>
+        <span>Credits: {auth.credits}</span>
+      </li>
+    </Ul>
+  );
+};
 
-  componentClicked = () => console.log("clicked");
-
-  render() {
-    let fbContent;
-
-    if (this.state.isLoggedIn) {
-      fbContent = (
-        <div
-          style={{
-            width: "200px",
-            margin: "right",
-            padding: "5px"
-          }}
-        >
-          <img src={this.state.picture} alt={this.state.name} />
-          <h2>Welcome {this.state.name}</h2>
-          Email: {this.state.email}
-        </div>
-      );
-    } else {
-      fbContent = (
-        <FacebookLogin
-          appId="2401284699888073"
-          autoLoad={true}
-          fields="name,email,picture"
-          onClick={this.componentClicked}
-          callback={this.responseFacebook}
-          size="small"
-          render={renderProps => (
-            <button onClick={renderProps.onClick}>This is my custom FB button</button>
-          )}
-        />
-      );
-    }
-
-    return <div>{fbContent}</div>;
-  }
-}
+export default FaceBook;
