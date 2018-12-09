@@ -1,9 +1,7 @@
 module.exports = {
-  googleClientID:
-    '751148381989-35j8fqrkeea5vnglv4mhup6c409b6ujc.apps.googleusercontent.com',
-  googleClientSecret: '46xIymjrKCDE-YAXBeoHuUhz',
-  mongoURI:
-    'mongodb://jamarr:Harrdcorre!23@ds227674.mlab.com:27674/quilt',
+  googleClientID: '751148381989-hck2ouub9a8cfaj7vu0l4d6lbkjpletq.apps.googleusercontent.com',
+  googleClientSecret: 'd5qhytHcoidRZbqYEH0RQfy7',
+  mongoURI: 'mongodb://jamarr:Harrdcorre!23@ds227674.mlab.com:27674/quilt',
   cookieKey: 'ireallylovecookiesandebbyandsnugs',
   stripePublicKey: 'pk_test_nNrAdQIeNUfjQpHKtYzalw8A',
   stripeSecretKey: 'sk_test_Ss9ahj3Yv9WPq1uQ8yt9oIcU',
