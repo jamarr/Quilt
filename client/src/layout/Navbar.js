@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import DashButton from "../components/Dashboard/DashButton";
 import FaceBook from "../components/Dashboard/FaceBook";
 
-
 const Nav = styled.nav`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -30,7 +29,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <Nav>
-        <h1 children='QUILT' />
+        <h1 children="QUILT" />
         <DashButton auth={this.props.auth} />
         <FaceBook auth={this.props.auth} />
       </Nav>
