@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { connect } from 'react-redux';
 
-import DashButton from "../components/Dashboard/DashButton";
-import FaceBook from "../components/Dashboard/FaceBook";
+import DashButton from '../components/Dashboard/DashButton';
 
 const Nav = styled.nav`
   display: grid;
@@ -29,7 +29,9 @@ class NavBar extends React.Component {
   render() {
     return (
       <Nav>
-        <h1 children="QUILT" />
+        <Link to='/'>
+          <h1 children='QUILT' />
+        </Link>
         <DashButton auth={this.props.auth} />
         <FaceBook auth={this.props.auth} />
       </Nav>

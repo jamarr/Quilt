@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER, FETCH_SURVEYS, FETCH_EVENTS } from './types';
+import { FETCH_USER } from './types';
 
 
 
@@ -14,7 +14,3 @@ export const handleToken = token => async dispatch => {
 
   dispatch({ type: FETCH_USER, payload: res.data });
 };
-
-
-
-
