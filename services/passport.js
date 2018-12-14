@@ -46,17 +46,15 @@ passport.use(
       callbackURL: "http://localhost:3000/auth/facebook/callback"
     },
 
-    function(accessToken, refreshToken, profile, done) {
-      User.findOrCreate(
-        { name: profile.displayName },
-        { name: profile.displayName, userid: profile.id },
-        function(err, user) {
-          if (err) {
-            return done(err);
-          }
-          done(null, user);
-        }
-      );
+    async (accessToken, refreshToken, profile, done) => {
+      const existingUser = await User.findOne({ facebookId: profile.id });
+
+      if (existingUser) {
+        return done(null, existingUser);
+      }
+
+      const user = await new User({ facbookId: profile.id }).save();
+      done(null, user);
     }
   )
 );

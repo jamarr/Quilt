@@ -3,8 +3,8 @@ import styled from "styled-components";
 import Payments from "../../layout/Payments";
 import Button from "../UI/Button";
 
-const LOGINN = <a href='/auth/facebook/callback'>Login</a>;
-const LOGOUTT= <a href='/api/logout'>Logout</a>;
+const LOGIN = <a href='/auth/facebook/callback'>Login</a>;
+const LOGOUT= <a href='/api/logout'>Logout</a>;
 
 const Ul = styled.ul`
   display: flex;
@@ -22,7 +22,7 @@ const Ul = styled.ul`
 const FaceBook = props => {
   const { auth } = props;
 
-  if (!auth) return <Button children={LOGINN} />;
+  if (!auth) return <Button children={LOGIN} />;
 
   return (
     <Ul>
@@ -30,7 +30,7 @@ const FaceBook = props => {
         <Payments />
       </li>
       <li>
-        <Button children={LOGOUTT} />
+        <Button children={LOGOUT} />
       </li>
       <li>
         <span>Credits: {auth.credits}</span>
