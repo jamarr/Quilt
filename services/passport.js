@@ -47,14 +47,28 @@ passport.use(
     },
 
     async (accessToken, refreshToken, profile, done) => {
-      const existingUser = await User.findOne({ facebookId: profile.id });
-
-      if (existingUser) {
-        return done(null, existingUser);
+      try {
+        console.log('profile', profile);
+        console.log('accessToken', accessToken);
+        console.log('refreshToken', refreshToken);
+        
+        const existingUser = await User.findOne({ facebookId: profile.id });
+        if (existingUser) {
+          return done(null, existingUser);
+        }
+    
+        const newUser = new User({
+          method: 'facebook',
+          facebook: {
+            facebookId: profile.id
+          }
+        });
+    
+        await newUser.save();
+        done(null, newUser);
+      } catch(error) {
+        done(error, false, error.message);
       }
+    }));
+  
 
-      const user = await new User({ facbookId: profile.id }).save();
-      done(null, user);
-    }
-  )
-);
