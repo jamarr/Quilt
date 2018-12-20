@@ -15,11 +15,12 @@ In development
 
 ### Built with
 
-- React
-- Redux
-- Mongo DB
-- Node.js
-- Stripe API
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Mongo DB](https://www.mongodb.com/)
+- [Express JS](https://expressjs.com/)
+- [Stripe API](https://stripe.com/)
+- [News API](https://newsapi.org/)
 
 # Features
 
@@ -28,6 +29,17 @@ In development
 - Users can login and save articles
 
 # Set Up
+
+## Client Side
+
+Add `.env` in `/client` folder with your personnal and private data
+
+```
+REACT_APP_NEWS_API_KEY=
+REACT_APP_STRIPE_KEY=
+```
+
+## Server Side
 
 Add `.env` in root folder with your personnal and private data
 
@@ -53,8 +65,8 @@ Server run on : http://localhost:5000
 
 # Credits
 
-@joshuaaguilar20  
-@jamarr  
-@Wolfy64  
-@ClaudioBardales  
-@sugarsyntax
+[@joshuaaguilar20](https://github.com/joshuaaguilar20)  
+[@jamarr](https://github.com/jamarr)  
+[@Wolfy64 ](https://github.com/Wolfy6)  
+[@ClaudioBardales](https://github.com/ClaudioBardales)  
+[@sugarsyntax](https://github.com/sugarsyntax)
