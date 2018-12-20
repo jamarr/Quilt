@@ -16,6 +16,7 @@ const Nav = styled.nav`
     font-size: 3.5rem;
     font-weight: 600;
     background: -webkit-linear-gradient(30deg, #4600ff, #ff0000);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
