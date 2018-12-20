@@ -18,6 +18,7 @@ mongoose
   .then(() => console.log('Connected to Mango'));
 
 app.use(express.json());
+app.use(express.urlencoded());
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
