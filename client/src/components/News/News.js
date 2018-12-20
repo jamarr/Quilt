@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import ArtFrame from './ArtFrame';
 import styled from 'styled-components';
 
-const newsKey = process.env.REACT_APP_NEWS_API_KEY;
-const URL = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${newsKey}`;
+const URL = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=774beda1345847508da686c538fe6698`;
 
 // List Of Replibican News
 const REPLUBLICAN = [
