@@ -1,10 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import Payments from "../../layout/Payments";
-import Button from "../UI/Button";
+import React from 'react';
+import styled from 'styled-components';
+import Button from '../UI/Button';
 
 const LOGIN = <a href='/auth/facebook/callback'>Login</a>;
-const LOGOUT= <a href='/api/logout'>Logout</a>;
+const LOGOUT = <a href='/api/logout'>Logout</a>;
 
 const Ul = styled.ul`
   display: flex;
@@ -27,13 +26,7 @@ const FaceBook = props => {
   return (
     <Ul>
       <li>
-        <Payments />
-      </li>
-      <li>
         <Button children={LOGOUT} />
-      </li>
-      <li>
-        <span>Credits: {auth.credits}</span>
       </li>
     </Ul>
   );

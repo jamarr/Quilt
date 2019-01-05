@@ -1,27 +1,27 @@
-const passport = require("passport");
+const passport = require('passport');
 
 module.exports = app => {
   app.get(
-    "/auth/facebook",
-    passport.authenticate("facebook", {
-      scope: ["public_profile", "email"]
+    '/auth/facebook',
+    passport.authenticate('facebook', {
+      scope: ['public_profile', 'email']
     })
   );
 
   app.get(
-    "/auth/facebook/callback",
-    passport.authenticate("facebook"),
+    '/auth/facebook/callback',
+    passport.authenticate('facebook'),
     (req, res) => {
-      res.redirect("/dashboard");
+      res.redirect('/');
     }
   );
 
-  app.get("/facebook/logout", (req, res) => {
+  app.get('/facebook/logout', (req, res) => {
     req.logout();
-    res.redirect("/");
+    res.redirect('/');
   });
 
-  app.get("/facebook/current_user", (req, res) => {
+  app.get('/facebook/current_user', (req, res) => {
     res.send(req.user);
   });
 };
