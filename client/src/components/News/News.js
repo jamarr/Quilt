@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import ArtFrame from './ArtFrame';
 import styled from 'styled-components';
 
-const URL =
-  'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=774beda1345847508da686c538fe6698';
+const URL = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=774beda1345847508da686c538fe6698`;
 
 // List Of Replibican News
 const REPLUBLICAN = [
@@ -70,18 +69,6 @@ class News extends Component {
     this.setState({
       itemSaved: this.state.itemSaved.add(item)
     });
-
-  renderItems = () => {
-    return this.state.news.map((item, index) => (
-      <div className="element-item red1 newsArticle news-box col-md-4 col-sm red1Link">
-        <ArtFrame
-          key={index}
-          item={item}
-          savedItem={item => this.handleSaveItem(item)}
-        />
-      </div>
-    ));
-  };
 
   render() {
     return (

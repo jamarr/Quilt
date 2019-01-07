@@ -1,10 +1,9 @@
-const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const mongoose = require("mongoose");
-const keys = require("../config/keys");
-const FacebookStrategy = require("passport-facebook").Strategy;
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const mongoose = require('mongoose');
+const config = require('../config');
 
-const User = mongoose.model("users");
+const User = mongoose.model('users');
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -19,9 +18,9 @@ passport.deserializeUser((id, done) => {
 passport.use(
   new GoogleStrategy(
     {
-      clientID: keys.googleClientID,
-      clientSecret: keys.googleClientSecret,
-      callbackURL: "/auth/google/redirect",
+      clientID: config.googleClientID,
+      clientSecret: config.googleClientSecret,
+      callbackURL: '/auth/google/callback',
       proxy: true
     },
     async (accessToken, refreshToken, profile, done) => {
@@ -37,13 +36,12 @@ passport.use(
   )
 );
 
-
 passport.use(
   new FacebookStrategy(
     {
       clientID: keys.FACEBOOK_APP_ID,
       clientSecret: keys.FACEBOOK_APP_SECRET,
-      callbackURL: "http://localhost:3000/auth/facebook/callback"
+      callbackURL: 'http://localhost:3000/auth/facebook/callback'
     },
 
     async (accessToken, refreshToken, profile, done) => {
@@ -51,24 +49,24 @@ passport.use(
         console.log('profile', profile);
         console.log('accessToken', accessToken);
         console.log('refreshToken', refreshToken);
-        
+
         const existingUser = await User.findOne({ facebookId: profile.id });
         if (existingUser) {
           return done(null, existingUser);
         }
-    
+
         const newUser = new User({
           method: 'facebook',
           facebook: {
             facebookId: profile.id
           }
         });
-    
+
         await newUser.save();
         done(null, newUser);
-      } catch(error) {
+      } catch (error) {
         done(error, false, error.message);
       }
-    }));
-  
-
+    }
+  )
+);
