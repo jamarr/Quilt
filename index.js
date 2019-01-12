@@ -1,4 +1,3 @@
-require('custom-env').env('dev');
 require('./models/User');
 require('./services/passport');
 const express = require('express');
