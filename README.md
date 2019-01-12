@@ -1,4 +1,4 @@
-# Quilt Project 2018
+# Quilt Project 2019
 
 By color coding each news article Quilt informs users of news sources biases.
 
