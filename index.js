@@ -43,5 +43,5 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.listen(process.env.port, () =>
-  console.log(`Express server listening on localhost:${process.env.port}`)
+  console.log(`Express server listening on localhost: ${process.env.port}`)
 );
