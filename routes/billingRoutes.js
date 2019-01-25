@@ -1,4 +1,4 @@
-require('custom-env').env('dev');
+require('custom-env').env(true);
 const stripe = require('stripe')(process.env.stripeSecretKey);
 const requireLogin = require('../middlewares/requireLogin');
 
